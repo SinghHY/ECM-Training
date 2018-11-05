@@ -73,6 +73,34 @@
 		<Property Name="target.server.vi.access" Type="Str">+*</Property>
 		<Property Name="target.server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="target.server.vi.propertiesEnabled" Type="Bool">true</Property>
+		<Property Name="target.WebServer.Config" Type="Str">Listen 8000
+
+NI.ServerName default
+DocumentRoot "$LVSERVER_DOCROOT"
+TypesConfig "$LVSERVER_CONFIGROOT/mime.types"
+DirectoryIndex index.htm
+WorkerLimit 10
+InactivityTimeout 60
+
+LoadModulePath "$LVSERVER_MODULEPATHS"
+LoadModule LVAuth lvauthmodule
+LoadModule LVRFP lvrfpmodule
+
+#
+# Pipeline Definition
+#
+
+SetConnector netConnector
+
+AddHandler LVAuth
+AddHandler LVRFP
+
+AddHandler fileHandler ""
+
+AddOutputFilter chunkFilter
+
+
+</Property>
 		<Property Name="target.WebServer.Enabled" Type="Bool">false</Property>
 		<Property Name="target.WebServer.LogEnabled" Type="Bool">false</Property>
 		<Property Name="target.WebServer.LogPath" Type="Path">/c/ni-rt/system/www/www.log</Property>
@@ -1159,6 +1187,12 @@
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 			</Item>
+			<Item Name="_Calculate Check Sum.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_Calculate Check Sum.vi"/>
+			<Item Name="_RT Command.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/_RT Command.ctl"/>
+			<Item Name="_TCP Build Error.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_TCP Build Error.vi"/>
+			<Item Name="_TCP Msg Read.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_TCP Msg Read.vi"/>
+			<Item Name="TCP Packet Info.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/TCP Packet Info.ctl"/>
+			<Item Name="TCP Packet Parsing State Machine.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/TCP Packet Parsing State Machine.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
