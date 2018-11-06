@@ -28,9 +28,26 @@
 		</Item>
 		<Item Name="Types" Type="Folder">
 			<Item Name="RT Loop Events.ctl" Type="VI" URL="../Types/RT Loop Events.ctl"/>
+			<Item Name="TCP Packet Info.ctl" Type="VI" URL="../Types/TCP Packet Info.ctl"/>
+			<Item Name="TCP Packet Parsing State Machine.ctl" Type="VI" URL="../Types/TCP Packet Parsing State Machine.ctl"/>
 		</Item>
-		<Item Name="ECM.vi" Type="VI" URL="../Windows UI/ECM.vi"/>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Windows UI" Type="Folder">
+			<Item Name="_Remote Communicate.vi" Type="VI" URL="../Windows UI/_Remote Communicate.vi"/>
+			<Item Name="_Remote Connect.vi" Type="VI" URL="../Windows UI/_Remote Connect.vi"/>
+			<Item Name="ECM.vi" Type="VI" URL="../Windows UI/ECM.vi"/>
+		</Item>
+		<Item Name="Global Parameters.vi" Type="VI" URL="../Windows UI/Global Parameters.vi"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+			</Item>
+			<Item Name="_Calculate Check Sum.vi" Type="VI" URL="../RT/_Calculate Check Sum.vi"/>
+			<Item Name="_RT Command.ctl" Type="VI" URL="../Types/_RT Command.ctl"/>
+			<Item Name="_RT Data.ctl" Type="VI" URL="../Type/_RT Data.ctl"/>
+			<Item Name="_TCP Build Error.vi" Type="VI" URL="../RT/_TCP Build Error.vi"/>
+			<Item Name="_TCP Msg Read.vi" Type="VI" URL="../RT/_TCP Msg Read.vi"/>
+			<Item Name="_TCP Msg Write.vi" Type="VI" URL="../RT/_TCP Msg Write.vi"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 	<Item Name="NI-sbRIO-9637-01c5c1f8" Type="RT Single-Board RIO">
@@ -111,6 +128,11 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="RT" Type="Folder">
+			<Item Name="_Calculate Check Sum.vi" Type="VI" URL="../RT/_Calculate Check Sum.vi"/>
+			<Item Name="_TCP Msg Read.vi" Type="VI" URL="../RT/_TCP Msg Read.vi"/>
+			<Item Name="RT.vi" Type="VI" URL="../RT/RT.vi"/>
+		</Item>
 		<Item Name="support" Type="Folder"/>
 		<Item Name="Chassis" Type="sbRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
@@ -1182,17 +1204,15 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="RT Loop Events.ctl" Type="VI" URL="../Types/RT Loop Events.ctl"/>
-		<Item Name="RT.vi" Type="VI" URL="../RT/RT.vi"/>
+		<Item Name="TCP Packet Info.ctl" Type="VI" URL="../Types/TCP Packet Info.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 			</Item>
-			<Item Name="_Calculate Check Sum.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_Calculate Check Sum.vi"/>
-			<Item Name="_RT Command.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/_RT Command.ctl"/>
-			<Item Name="_TCP Build Error.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_TCP Build Error.vi"/>
-			<Item Name="_TCP Msg Read.vi" Type="VI" URL="../../GC-MSMSDevlopment/RT 9607/_TCP Msg Read.vi"/>
-			<Item Name="TCP Packet Info.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/TCP Packet Info.ctl"/>
-			<Item Name="TCP Packet Parsing State Machine.ctl" Type="VI" URL="../../GC-MSMSDevlopment/Type/TCP Packet Parsing State Machine.ctl"/>
+			<Item Name="_RT Command.ctl" Type="VI" URL="../Types/_RT Command.ctl"/>
+			<Item Name="_TCP Build Error.vi" Type="VI" URL="../RT/_TCP Build Error.vi"/>
+			<Item Name="TCP Packet Info.ctl" Type="VI" URL="../Types/TCP Packet Info.ctl"/>
+			<Item Name="TCP Packet Parsing State Machine.ctl" Type="VI" URL="../Types/TCP Packet Parsing State Machine.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
